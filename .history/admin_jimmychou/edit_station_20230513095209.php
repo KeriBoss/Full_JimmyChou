@@ -28,7 +28,7 @@ var_dump($id );
     <!-- DataTales Example -->
     <div class="card shadow mb-4">
         <div class="p-4 d-flex justify-content-start align-items-center">
-            <form action="action/location/edit_location.php" method="post" class="w-50" enctype="multipart/form-data">
+            <form action="<?= $url ?>/action/location/edit_location.php" method="post" class="w-50" enctype="multipart/form-data">
                 <input type="number" name="location_id" class="form-control" value="<?= $id ?>" hidden>
                 <div class="form-group">
                                 <label for=""><b>Chọn điểm xuất phát</b></label>
