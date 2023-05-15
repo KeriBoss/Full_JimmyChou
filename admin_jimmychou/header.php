@@ -44,6 +44,9 @@ $urlImg =  $path . '/jimmy_chou';
     <link rel="stylesheet" href="./public/css/bootstrap-datepicker.css">
     <link rel="stylesheet" href="./public/css/jquery.timepicker.css">
 
+    <!-- our project just needs Font Awesome Solid + Brands -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+
     <!-- Custom styles for this template-->
     <link href="public/css/sb-admin-2.min.css" rel="stylesheet">
     <link href="public/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
@@ -113,6 +116,7 @@ $urlImg =  $path . '/jimmy_chou';
                     <div class="bg-white py-2 collapse-inner rounded">
                         <a class="collapse-item" href="./list_agency.php">Danh sách hãng</a>
                         <a class="collapse-item" href="./list_vehicle.php">Danh sách phương tiện</a>
+                        <a class="collapse-item" href="./list_transport.php">Phương tiện vận chuyển</a>
                     </div>
                 </div>
             </li>
