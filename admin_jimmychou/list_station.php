@@ -55,7 +55,7 @@ $getAllLocation = $location->getAllLocation();//get all location in data
                                                 ?>
                                             </td>
                                             <td><a href="./edit_station.php?id=<?=$item['id']?>" class="btn btn-primary btnEdit">Edit</a></td>
-                                            <td><a onclick="if(CheckForm() == false) return false" href="action/vehicle/delete_station.php?id=<?=$item['id']?>" class="btn btn-danger">Delete</a></td>
+                                            <td><a onclick="if(CheckForm() == false) return false" href="action/station/delete_station.php?id=<?=$item['id']?>" class="btn btn-danger">Delete</a></td>
                                         </tr>
                                     <?php } ?>
                                 </tbody>

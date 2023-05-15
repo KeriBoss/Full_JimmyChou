@@ -19,9 +19,9 @@ class Station extends Database{
     /**
      * function update station by id
      */
-    function update($id, $point_pick, $point_drop, $departure_time, $location_id){
-        $sql = parent::$connection->prepare("UPDATE `station` SET `point_pick`= ? ,`point_drop`= ? ,`departure_time`= ?, `location_id` = ? WHERE `id` = ?");
-        $sql->bind_param('ssiii', $point_pick, $point_drop, $departure_time, $location_id, $id);
+    function update($id, $point_pick, $point_drop, $departure_time, $status, $location_id){
+        $sql = parent::$connection->prepare("UPDATE `station` SET `point_pick`= ? ,`point_drop`= ? ,`departure_time`= ?, `status` = ?, `location_id` = ? WHERE `id` = ?");
+        $sql->bind_param('sssiii', $point_pick, $point_drop, $departure_time, $status, $location_id, $id);
         return $sql->execute();
     }
     /**
@@ -36,7 +36,7 @@ class Station extends Database{
      * get station by id
      */
     function getStationById($id){
-        $sql = parent::$connection->prepare("SELECT * FROM `station`,`location` WHERE `station`.`id` = ?");
+        $sql = parent::$connection->prepare("SELECT * FROM `station`,`location` WHERE `station`.`location_id` = location.id and `station`.`id` = ?");
         $sql->bind_param('i', $id);
         return parent::select($sql);
     }
