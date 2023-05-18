@@ -1665,7 +1665,7 @@
 		}
 	);
 	$(function(){
-		$('[data-provide="datepicker-inline"]').datepicker();
+		$('[data-provide="datepicker-inline"]').datepicker({});
 	});
 
 }(window.jQuery));

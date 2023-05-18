@@ -32,7 +32,6 @@ $getAllLocation = $location->getAllLocation();//get all location in data
                                         <th>STT</th>
                                         <th>Điểm đón</th>
                                         <th>Điểm đến</th>
-                                        <th>Giờ khởi hành</th>
                                         <th>Thuộc hành trình</th>
                                         <th>Trạng thái</th>
                                         <th width="5%"></th>
@@ -47,7 +46,6 @@ $getAllLocation = $location->getAllLocation();//get all location in data
                                             <td><?=$count++?></td>
                                             <td><?=$item['point_pick']?></td>
                                             <td><?=$item['point_drop']?></td>
-                                            <td><?=$item['departure_time']?></td>
                                             <td>Từ: <?=$item['location_pick']?>, đến:  <?=$item['location_drop']?></td>
                                             <td>
                                                 <?php if($item['status'] === 1){echo "Hiện";}
@@ -86,10 +84,6 @@ $getAllLocation = $location->getAllLocation();//get all location in data
                             <div class="form-group">
                                 <label for="point_drop">Điểm đến*</label>
                                 <input type="text" name="point_drop" class="form-control" placeholder="Nhập địa điểm ...">
-                            </div>
-                            <div class="form-group w-25">
-                                <label for=""><b>Giờ khởi hành</b></label>
-                                <input type="text" class="form-control" name="departure_time" id="time_pick" placeholder="Chọn giờ khởi hành" pattern="[0-9.0-9]+:[0-9.0-9]+[a-z]{2}">
                             </div>
                             <div class="form-group">
                                 <label for="">Chọn hành trình: </label>

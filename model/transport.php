@@ -1,5 +1,5 @@
 <?php
-require_once __DIR__."./database.php";
+require_once "database.php";
 class Transport extends Database{
     /**
      * Funtion get All transport

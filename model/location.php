@@ -1,5 +1,5 @@
 <?php
-require_once __DIR__."./database.php";
+require_once "database.php";
 class Location extends Database{
     /**
      * Get all location

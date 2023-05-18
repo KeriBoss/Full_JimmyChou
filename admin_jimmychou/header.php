@@ -2,11 +2,6 @@
 session_start();
 define('JPATH_BASE', dirname(__FILE__));
 
-if (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on')
-    $path = "https://";
-else
-    $path = "http://";
-$path .= $_SERVER['HTTP_HOST'];
 require_once JPATH_BASE . "../../model/config.php";
 require_once JPATH_BASE . "../../model/database.php";
 
@@ -16,8 +11,8 @@ if (!isset($_SESSION['admin'])) {
 } else {
     $current_user = $_SESSION['admin'];
 }
-$url = $path . '/admin_jimmychou';
-$urlImg =  $path . '/jimmy_chou';
+$url = '../admin_jimmychou';
+$urlImg =  '../jimmy_chou';
 // $url = 'http://localhost/Admin_JimmyChou';
 // $urlImg = 'http://localhost/Jimmy_Chou';
 
@@ -120,49 +115,22 @@ $urlImg =  $path . '/jimmy_chou';
                     </div>
                 </div>
             </li>
-
-            <!-- Divider -->
-            <hr class="sidebar-divider">
-
-            <!-- Heading -->
-            <div class="sidebar-heading">
-                Addons
-            </div>
-
-            <!-- Nav Item - Pages Collapse Menu -->
+            <!-- Nav Item - Utilities Collapse Menu -->
             <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
-                    aria-expanded="true" aria-controls="collapsePages">
-                    <i class="fas fa-fw fa-folder"></i>
-                    <span>Pages</span>
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#hanh_trinh"
+                    aria-expanded="true" aria-controls="hanh_trinh">
+                    <i class="fas fa-fw fa-wrench"></i>
+                    <span>Hành trình</span>
                 </a>
-                <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+                <div id="hanh_trinh" class="collapse" aria-labelledby="headingUtilities"
+                    data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Login Screens:</h6>
-                        <a class="collapse-item" href="login.html">Login</a>
-                        <a class="collapse-item" href="register.html">Register</a>
-                        <a class="collapse-item" href="forgot-password.html">Forgot Password</a>
-                        <div class="collapse-divider"></div>
-                        <h6 class="collapse-header">Other Pages:</h6>
-                        <a class="collapse-item" href="404.html">404 Page</a>
-                        <a class="collapse-item" href="blank.html">Blank Page</a>
+                        <a class="collapse-item" href="./list_ticket.php">Danh sách vé</a>
+                        <a class="collapse-item" href="./list_mission.php">Phân công phương tiện</a>
                     </div>
                 </div>
             </li>
 
-            <!-- Nav Item - Charts -->
-            <li class="nav-item">
-                <a class="nav-link" href="charts.html">
-                    <i class="fas fa-fw fa-chart-area"></i>
-                    <span>Charts</span></a>
-            </li>
-
-            <!-- Nav Item - Tables -->
-            <li class="nav-item">
-                <a class="nav-link" href="tables.html">
-                    <i class="fas fa-fw fa-table"></i>
-                    <span>Tables</span></a>
-            </li>
 
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">
@@ -172,12 +140,6 @@ $urlImg =  $path . '/jimmy_chou';
                 <button class="rounded-circle border-0" id="sidebarToggle"></button>
             </div>
 
-            <!-- Sidebar Message -->
-            <div class="sidebar-card d-none d-lg-flex">
-                <img class="sidebar-card-illustration mb-2" src="img/undraw_rocket.svg" alt="...">
-                <p class="text-center mb-2"><strong>SB Admin Pro</strong> is packed with premium features, components, and more!</p>
-                <a class="btn btn-success btn-sm" href="https://startbootstrap.com/theme/sb-admin-pro">Upgrade to Pro!</a>
-            </div>
 
         </ul>
         <!-- End of Sidebar -->

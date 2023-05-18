@@ -70,3 +70,62 @@ $(document).ready(function () {
         }
     })
 })
+
+const btnMission = document.getElementById('mission_vehicle');
+
+if(btnMission){
+    btnMission.addEventListener('change', function(e){
+        var content_vehicle = document.getElementById('content_vehicle');
+        e.preventDefault();
+        let vehicle_id = btnMission.value;
+        $.ajax({
+            url: 'ajax_get_vehicle.php',
+            type: 'get',
+            dataType: 'json',
+            data: {
+                vehicle_id: vehicle_id
+            }
+        }).done(function (reponse){
+            content_vehicle.innerHTML = ``;
+            reponse.forEach(item => {
+                content_vehicle.innerHTML +=`
+                <div class="card p-3">
+                    <p>
+                        <img class="img-fluid" src="../jimmy_chou/images/vehicle/${item['image']}" alt="Img Product">
+                    </p>
+                    <p>Biển số xe: ${item['license_plate']}</p>
+                    <p>Số ghế: ${item['seat']}</p>
+                </div>
+                `;
+            })
+        });
+    })
+}
+window.addEventListener('load', function(e){
+    if(btnMission){
+        var content_vehicle = document.getElementById('content_vehicle');
+        e.preventDefault();
+        let vehicle_id = btnMission.value;
+        $.ajax({
+            url: 'ajax_get_vehicle.php',
+            type: 'get',
+            dataType: 'json',
+            data: {
+                vehicle_id: vehicle_id
+            }
+        }).done(function (reponse){
+            content_vehicle.innerHTML = ``;
+            reponse.forEach(item => {
+                content_vehicle.innerHTML +=`
+                <div class="card p-3">
+                    <p>
+                        <img class="img-fluid" style="max-width:700px;" src="../jimmy_chou/images/vehicle/${item['image']}" alt="Img Product">
+                    </p>
+                    <p>Biển số xe: ${item['license_plate']}</p>
+                    <p>Số ghế: ${item['seat']}</p>
+                </div>
+                `;
+            })
+        });
+    }
+})

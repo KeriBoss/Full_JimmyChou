@@ -28,7 +28,7 @@ $getAllStation = $station->getAllStation();
     <!-- DataTales Example -->
     <div class="card shadow mb-4">
         <div class="p-4 d-flex justify-content-start align-items-center">
-            <form action="action/station/edit_station.php" method="post" class="w-50" enctype="multipart/form-data">
+            <form action="action/station/edit_station.php" method="post" enctype="multipart/form-data">
                 <input type="number" name="station_id" class="form-control" value="<?= $id ?>" hidden>
                 <div class="form-group">
                     <label for=""><b>Chọn điểm xuất phát</b></label>
@@ -53,12 +53,8 @@ $getAllStation = $station->getAllStation();
                     </datalist>
                 </div>
                 <div class="form-group">
-                    <label for=""><b>Giờ khởi hành</b></label>
-                    <input type="text" class="form-control" name="departure_time" id="time_pick" placeholder="Chọn giờ khởi hành" pattern="[0-9.0-9]+:[0-9.0-9]+[a-z]{2}" value="<?= $getStationById[0]['departure_time'] ?>">
-                </div>
-                <div class="form-group">
+                    <label><b>Chọn tuyến đường:</b></label>
                     <select name="location_id" class="form-control">
-                        <label for=""><b>Chọn tuyến đường:</b></label>
                         <?php
                         foreach ($getAllLocation as $item) {
                             if ($item['id'] == $getStationById[0]['location_id']) { ?>

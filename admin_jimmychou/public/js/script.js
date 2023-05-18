@@ -142,34 +142,28 @@ function clearSeat(){
     })
 }
 
-//----------------------
+//----------------------Check date input equal or highest current date
 
-// const vehicle_name = document.getElementById('vehicle_name');
+function kiemtraDate() {
+    var inputDate = document.querySelectorAll('input[type=date]');
 
-// btnAddVehicle.onclick = (e)=>{
-//     let vehicle_name_value = vehicle_name.value;
-//     let license_plate = document.getElementById('license_plate').value;
-//     let vehicle_seat = document.getElementById('vehicle_seat').value;
-//     let vehicle_floor = document.getElementById('vehicle_floor').value;
-//     let agency_id = document.getElementById('agency_id').value;
-
-//     vehicle_name_value = ARR_SEAT;
-//     // $.ajax({
-//     //     url: '../../action/vehicle/add_vehicle.php',
-//     //     type: 'post',
-//     //     dataType: 'json',
-//     //     contentType: false,
-//     //     cache: false,
-//     //     data: {
-//     //         name: vehicle_name,
-//     //         image: files,
-//     //         license_plate: license_plate,
-//     //         seat: vehicle_seat,
-//     //         floor: vehicle_floor,
-//     //         agency: agency_id,
-//     //         diagram: ARR_SEAT
-//     //     }
-//     // }).done(function (reponse) {
-//     //     console.log(reponse);
-//     // });
-// }
+    var check = false;
+    inputDate.forEach(item => {
+        var q = new Date();
+        var date = new Date(q.getFullYear(),q.getMonth(),q.getDate());
+        var mydate = new Date(item.value);
+        if(date > mydate){
+            check = false;
+            alert("Ngày khởi hành phải lớn hơn hoặc bằng ngày hiện tại!");
+            return;
+        }else {
+            check = true;
+        }
+        if(typeof inputDate.value == "undefined" ||  inputDate.value == ''){
+            check = false;
+            alert('Ngày khởi hành và giờ khởi hành không được để trống!');
+            return;
+        }
+    });
+    return check;
+}

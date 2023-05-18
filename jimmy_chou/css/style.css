@@ -3477,7 +3477,7 @@ form #round-way{
   transition: all .2s;
 }
 
-#pick_option_rental .tab-content input#roundway:checked ~ label ~ form #round-way{
+#pick_option_rental .tab-content input#oneway:checked ~ label ~ form #round-way{
   opacity: 0;
   pointer-events: none;
 }
