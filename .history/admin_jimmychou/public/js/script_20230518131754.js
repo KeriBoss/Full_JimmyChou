@@ -159,11 +159,11 @@ function kiemtraDate() {
         }else {
             check = true;
         }
-        // if(typeof inputDate.value == "undefined"){
-        //     check = false;
-        //     alert('Ngày khởi hành và giờ khởi hành không được để trống!');
-        //     return;
-        // }
+        if(typeof inputDate.value == "undefined" ||  inputDate.value == ''){
+            check = false;
+            alert('Ngày khởi hành và giờ khởi hành không được để trống!');
+            return;
+        }
     });
     return check;
 }
