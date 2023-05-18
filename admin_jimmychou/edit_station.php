@@ -29,7 +29,11 @@ $getAllStation = $station->getAllStation();
     <div class="card shadow mb-4">
         <div class="p-4 d-flex justify-content-start align-items-center">
 <<<<<<< HEAD
+<<<<<<< HEAD
             <form action="action/station/edit_station.php" method="post" enctype="multipart/form-data">
+=======
+            <form action="action/station/edit_station.php" method="post" class="w-50" enctype="multipart/form-data">
+>>>>>>> cac92693fe3f5b19c5e4e05e30f9473371b1cb2c
 =======
             <form action="action/station/edit_station.php" method="post" class="w-50" enctype="multipart/form-data">
 >>>>>>> cac92693fe3f5b19c5e4e05e30f9473371b1cb2c
@@ -58,15 +62,21 @@ $getAllStation = $station->getAllStation();
                 </div>
                 <div class="form-group">
 <<<<<<< HEAD
+<<<<<<< HEAD
                     <label><b>Chọn tuyến đường:</b></label>
                     <select name="location_id" class="form-control">
 =======
+=======
+>>>>>>> cac92693fe3f5b19c5e4e05e30f9473371b1cb2c
                     <label for=""><b>Giờ khởi hành</b></label>
                     <input type="text" class="form-control" name="departure_time" id="time_pick" placeholder="Chọn giờ khởi hành" pattern="[0-9.0-9]+:[0-9.0-9]+[a-z]{2}" value="<?= $getStationById[0]['departure_time'] ?>">
                 </div>
                 <div class="form-group">
                     <select name="location_id" class="form-control">
                         <label for=""><b>Chọn tuyến đường:</b></label>
+<<<<<<< HEAD
+>>>>>>> cac92693fe3f5b19c5e4e05e30f9473371b1cb2c
+=======
 >>>>>>> cac92693fe3f5b19c5e4e05e30f9473371b1cb2c
                         <?php
                         foreach ($getAllLocation as $item) {
