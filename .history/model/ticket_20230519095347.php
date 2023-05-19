@@ -47,13 +47,4 @@ class Ticket extends Database{
         $sql = parent::$connection->prepare("SELECT *,ticket.id as ticket_id, transport.id as ID_transport, vehicle.id as ID_vehicle, location.id as ID_location, transport.name as transport_name, vehicle.name as vehicle_name  FROM ticket INNER JOIN transport on ticket.transport_id = transport.id INNER JOIN location ON ticket.location_id = location.id INNER JOIN vehicle ON ticket.vehicle_id = vehicle.id INNER JOIN agency ON vehicle.agency_id = agency.id order by ticket.id desc");
         return parent::select($sql);
     }
-    /**
-     * Search ticket in date
-     */
-    function searchTicker($f_location, $l_location=null, $start_date, $end_date=null){
-        $sql = parent::$connection->prepare("SELECT *,ticket.id as ticket_id, transport.id as ID_transport, vehicle.id as ID_vehicle, location.id as ID_location, transport.name as transport_name, vehicle.name as vehicle_name  FROM ticket INNER JOIN transport on ticket.transport_id = transport.id INNER JOIN location ON ticket.location_id = location.id INNER JOIN vehicle ON ticket.vehicle_id = vehicle.id INNER JOIN agency ON vehicle.agency_id = agency.id WHERE location_pick LIKE ? ");
-        $search = "%{$keyword}%";
-        $sql->bind_param('s', $search);
-        return parent::select($sql);
-    }
 }

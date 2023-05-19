@@ -30,7 +30,7 @@ $location = new Location();
 $getAllLocationLimit = $location->getAllLocationLimit($limit);
 
 $ticket = new Ticket();//Create object ticket of trip
-$getAllTicket = $ticket->getAllTicketForUser();
+$getAllTicket = $ticket->getAllTicket();
 ?>
 
 <div class="jimmy-wrap"></div>
@@ -90,7 +90,7 @@ $getAllTicket = $ticket->getAllTicketForUser();
                                             </div>
                                             <datalist id="option_drop">
                                                 <?php foreach($getAllLocationLimit as $location){ ?>
-                                                    <option value="<?=$location['location_drop']?>">
+                                                    <option value="<?=$location['location_pick']?>">
                                                 <?php } ?>
                                             </datalist>
                                         </div>
@@ -349,30 +349,31 @@ $getAllTicket = $ticket->getAllTicketForUser();
                         </div>
                         <?php 
                         foreach($getAllTicket as $item){
+                            var_dump($item);
                         ?>
-                        <div class="card-body mb-3">
+                        <div class="card-body">
                             <div class="card-top">
                                 <div class="row">
                                     <div class="col-lg-2 col-md-12 col-12 margin-mb-1 flex-mb">
                                         <p><b><?=$item['time_duration']?></b></p>
-                                        <p class="margin-ml-1"><span>00h04m*</span></p>
+                                        <p class="margin-ml-1"><span>00h09m*</span></p>
                                     </div>
                                     <div class="col-lg-2 col-md-5 col-5 margin-mb-1">
-                                        <p><?=$item['location_pick']?></p>
-                                        <!-- <p><span>( <?=$item['location_pick']?> )</span></p> -->
+                                        <p>Hồ Chí Minh</p>
+                                        <p><span>( Hồ Chí Minh )</span></p>
                                     </div>
                                     <div class="col-lg-1 col-md-2 col-2 margin-mb-1">
                                         <span class="icon-next"><i class='bx bxs-chevron-right'></i> </span>
                                     </div>
                                     <div class="col-lg-2 col-md-5 col-5 margin-mb-1">
-                                        <p><?=$item['location_drop']?></p>
-                                        <!-- <p><span>( Hồ Chí Minh )</span></p> -->
+                                        <p>Hồ Chí Minh</p>
+                                        <p><span>( Hồ Chí Minh )</span></p>
                                     </div>
                                     <div class="col-lg-1 col-md-12 col-12 margin-mb-1">
-                                        <p><?=$item['seat']?> chỗ</p>
+                                        <p>31 chỗ</p>
                                     </div>
                                     <div class="col-lg-2 col-md-6 col-6">
-                                        <p><span><i class='bx bx-user'></i></span> <b>VND <?=number_format($item['price'])?></b></p>
+                                        <p><span><i class='bx bx-user'></i></span> <b>VND 550.000</b></p>
                                     </div>
                                     <div class="col-lg-2 col-md-6 col-6 text-center">
                                         <button type="button" data-toggle="modal" data-target="#modal_booking_ticket"
@@ -383,10 +384,10 @@ $getAllTicket = $ticket->getAllTicketForUser();
                             <div class="card-bottom">
                                 <div class="row align-items-center">
                                     <div class="col-lg-2 col-md-4 col-4">
-                                        <img src="./images/agency/<?=$item['img_logo']?>" class="img-fluid" alt="<?=$item['img_logo']?>">
+                                        <img src="./images/khai_nam.png" class="img-fluid" alt="">
                                     </div>
                                     <div class="col-lg-3 col-md-4 col-8">
-                                        <span><?=$item['agency_name']?> • Xe nằm <?=$item['seat']?> chỗ</span>
+                                        <span>Khải Nam • Giường nằm 40 chỗ</span>
                                     </div>
                                     <div class="col-lg-2 col-md-4 col-12">
                                         <a href="#">Photo</a>
@@ -398,6 +399,335 @@ $getAllTicket = $ticket->getAllTicketForUser();
                             </div>
                         </div>
                         <?php } ?>
+                        <div class="card-body mt-3">
+                            <div class="card-top">
+                                <div class="row">
+                                    <div class="col-lg-2 col-md-12 col-12 margin-mb-1 flex-mb">
+                                        <p><b>05:00 AM</b></p>
+                                        <p class="margin-ml-1"><span>00h09m*</span></p>
+                                    </div>
+                                    <div class="col-lg-2 col-md-5 col-5 margin-mb-1">
+                                        <p>Hồ Chí Minh</p>
+                                        <p><span>( Hồ Chí Minh )</span></p>
+                                    </div>
+                                    <div class="col-lg-1 col-md-2 col-2 margin-mb-1">
+                                        <span class="icon-next"><i class='bx bxs-chevron-right'></i> </span>
+                                    </div>
+                                    <div class="col-lg-2 col-md-5 col-5 margin-mb-1">
+                                        <p>Hồ Chí Minh</p>
+                                        <p><span>( Hồ Chí Minh )</span></p>
+                                    </div>
+                                    <div class="col-lg-1 col-md-12 col-12 margin-mb-1">
+                                        <p>31 chỗ</p>
+                                    </div>
+                                    <div class="col-lg-2 col-md-6 col-6">
+                                        <p><span><i class='bx bx-user'></i></span> <b>VND 550.000</b></p>
+                                    </div>
+                                    <div class="col-lg-2 col-md-6 col-6 text-center">
+                                        <button type="button" data-toggle="modal" data-target="#modal_booking_ticket_2"
+                                            class="btn btn-success">Chọn</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-bottom">
+                                <div class="row align-items-center">
+                                    <div class="col-lg-2 col-md-4 col-4">
+                                        <img src="./images/tien_phat.png" class="img-fluid" alt="">
+                                    </div>
+                                    <div class="col-lg-3 col-md-4 col-8">
+                                        <span>Tiến phát • Giường nằm 40 chỗ</span>
+                                    </div>
+                                    <div class="col-lg-2 col-md-4 col-12">
+                                        <a href="#">Photo</a>
+                                        <span> | </span>
+                                        <button type="button" data-toggle="modal" data-target="#modal_ticket">Chi
+                                            tiết</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body mt-3">
+                            <div class="card-top">
+                                <div class="row">
+                                    <div class="col-lg-2 col-md-12 col-12 margin-mb-1 flex-mb">
+                                        <p><b>05:00 AM</b></p>
+                                        <p class="margin-ml-1"><span>00h09m*</span></p>
+                                    </div>
+                                    <div class="col-lg-2 col-md-5 col-5 margin-mb-1">
+                                        <p>Hồ Chí Minh</p>
+                                        <p><span>( Hồ Chí Minh )</span></p>
+                                    </div>
+                                    <div class="col-lg-1 col-md-2 col-2 margin-mb-1">
+                                        <span class="icon-next"><i class='bx bxs-chevron-right'></i> </span>
+                                    </div>
+                                    <div class="col-lg-2 col-md-5 col-5 margin-mb-1">
+                                        <p>Hồ Chí Minh</p>
+                                        <p><span>( Hồ Chí Minh )</span></p>
+                                    </div>
+                                    <div class="col-lg-1 col-md-12 col-12 margin-mb-1">
+                                        <p>31 chỗ</p>
+                                    </div>
+                                    <div class="col-lg-2 col-md-6 col-6">
+                                        <p><span><i class='bx bx-user'></i></span> <b>VND 550.000</b></p>
+                                    </div>
+                                    <div class="col-lg-2 col-md-6 col-6 text-center">
+                                        <button type="button" data-toggle="modal" data-target="#modal_booking_ticket"
+                                            class="btn btn-success">Chọn</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-bottom">
+                                <div class="row align-items-center">
+                                    <div class="col-lg-2 col-md-4 col-4">
+                                        <img src="./images/result-logo-na.png" class="img-fluid" alt="">
+                                    </div>
+                                    <div class="col-lg-3 col-md-4 col-8">
+                                        <span>Khải Nam • Giường nằm 40 chỗ</span>
+                                    </div>
+                                    <div class="col-lg-2 col-md-4 col-12">
+                                        <a href="#">Photo</a>
+                                        <span> | </span>
+                                        <button type="button" data-toggle="modal" data-target="#modal_ticket">Chi
+                                            tiết</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body mt-3">
+                            <div class="card-top">
+                                <div class="row">
+                                    <div class="col-lg-2 col-md-12 col-12 margin-mb-1 flex-mb">
+                                        <p><b>05:00 AM</b></p>
+                                        <p class="margin-ml-1"><span>00h09m*</span></p>
+                                    </div>
+                                    <div class="col-lg-2 col-md-5 col-5 margin-mb-1">
+                                        <p>Hồ Chí Minh</p>
+                                        <p><span>( Hồ Chí Minh )</span></p>
+                                    </div>
+                                    <div class="col-lg-1 col-md-2 col-2 margin-mb-1">
+                                        <span class="icon-next"><i class='bx bxs-chevron-right'></i> </span>
+                                    </div>
+                                    <div class="col-lg-2 col-md-5 col-5 margin-mb-1">
+                                        <p>Hồ Chí Minh</p>
+                                        <p><span>( Hồ Chí Minh )</span></p>
+                                    </div>
+                                    <div class="col-lg-1 col-md-12 col-12 margin-mb-1">
+                                        <p>31 chỗ</p>
+                                    </div>
+                                    <div class="col-lg-2 col-md-6 col-6">
+                                        <p><span><i class='bx bx-user'></i></span> <b>VND 550.000</b></p>
+                                    </div>
+                                    <div class="col-lg-2 col-md-6 col-6 text-center">
+                                        <button type="button" data-toggle="modal" data-target="#modal_booking_ticket"
+                                            class="btn btn-success">Chọn</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-bottom">
+                                <div class="row align-items-center">
+                                    <div class="col-lg-2 col-md-4 col-4">
+                                        <img src="./images/result-logo-na.png" class="img-fluid" alt="">
+                                    </div>
+                                    <div class="col-lg-3 col-md-4 col-8">
+                                        <span>Khải Nam • Giường nằm 40 chỗ</span>
+                                    </div>
+                                    <div class="col-lg-2 col-md-4 col-12">
+                                        <a href="#">Photo</a>
+                                        <span> | </span>
+                                        <button type="button" data-toggle="modal" data-target="#modal_ticket">Chi
+                                            tiết</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body mt-3">
+                            <div class="card-top">
+                                <div class="row">
+                                    <div class="col-lg-2 col-md-12 col-12 margin-mb-1 flex-mb">
+                                        <p><b>05:00 AM</b></p>
+                                        <p class="margin-ml-1"><span>00h09m*</span></p>
+                                    </div>
+                                    <div class="col-lg-2 col-md-5 col-5 margin-mb-1">
+                                        <p>Hồ Chí Minh</p>
+                                        <p><span>( Hồ Chí Minh )</span></p>
+                                    </div>
+                                    <div class="col-lg-1 col-md-2 col-2 margin-mb-1">
+                                        <span class="icon-next"><i class='bx bxs-chevron-right'></i> </span>
+                                    </div>
+                                    <div class="col-lg-2 col-md-5 col-5 margin-mb-1">
+                                        <p>Hồ Chí Minh</p>
+                                        <p><span>( Hồ Chí Minh )</span></p>
+                                    </div>
+                                    <div class="col-lg-1 col-md-12 col-12 margin-mb-1">
+                                        <p>31 chỗ</p>
+                                    </div>
+                                    <div class="col-lg-2 col-md-6 col-6">
+                                        <p><span><i class='bx bx-user'></i></span> <b>VND 550.000</b></p>
+                                    </div>
+                                    <div class="col-lg-2 col-md-6 col-6 text-center">
+                                        <button type="button" data-toggle="modal" data-target="#modal_booking_ticket"
+                                            class="btn btn-success">Chọn</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-bottom">
+                                <div class="row align-items-center">
+                                    <div class="col-lg-2 col-md-4 col-4">
+                                        <img src="./images/result-logo-na.png" class="img-fluid" alt="">
+                                    </div>
+                                    <div class="col-lg-3 col-md-4 col-8">
+                                        <span>Khải Nam • Giường nằm 40 chỗ</span>
+                                    </div>
+                                    <div class="col-lg-2 col-md-4 col-12">
+                                        <a href="#">Photo</a>
+                                        <span> | </span>
+                                        <button type="button" data-toggle="modal" data-target="#modal_ticket">Chi
+                                            tiết</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body mt-3">
+                            <div class="card-top">
+                                <div class="row">
+                                    <div class="col-lg-2 col-md-12 col-12 margin-mb-1 flex-mb">
+                                        <p><b>05:00 AM</b></p>
+                                        <p class="margin-ml-1"><span>00h09m*</span></p>
+                                    </div>
+                                    <div class="col-lg-2 col-md-5 col-5 margin-mb-1">
+                                        <p>Hồ Chí Minh</p>
+                                        <p><span>( Hồ Chí Minh )</span></p>
+                                    </div>
+                                    <div class="col-lg-1 col-md-2 col-2 margin-mb-1">
+                                        <span class="icon-next"><i class='bx bxs-chevron-right'></i> </span>
+                                    </div>
+                                    <div class="col-lg-2 col-md-5 col-5 margin-mb-1">
+                                        <p>Hồ Chí Minh</p>
+                                        <p><span>( Hồ Chí Minh )</span></p>
+                                    </div>
+                                    <div class="col-lg-1 col-md-12 col-12 margin-mb-1">
+                                        <p>31 chỗ</p>
+                                    </div>
+                                    <div class="col-lg-2 col-md-6 col-6">
+                                        <p><span><i class='bx bx-user'></i></span> <b>VND 550.000</b></p>
+                                    </div>
+                                    <div class="col-lg-2 col-md-6 col-6 text-center">
+                                        <button type="button" data-toggle="modal" data-target="#modal_booking_ticket"
+                                            class="btn btn-success">Chọn</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-bottom">
+                                <div class="row align-items-center">
+                                    <div class="col-lg-2 col-md-4 col-4">
+                                        <img src="./images/result-logo-na.png" class="img-fluid" alt="">
+                                    </div>
+                                    <div class="col-lg-3 col-md-4 col-8">
+                                        <span>Khải Nam • Giường nằm 40 chỗ</span>
+                                    </div>
+                                    <div class="col-lg-2 col-md-4 col-12">
+                                        <a href="#">Photo</a>
+                                        <span> | </span>
+                                        <button type="button" data-toggle="modal" data-target="#modal_ticket">Chi
+                                            tiết</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body mt-3">
+                            <div class="card-top">
+                                <div class="row">
+                                    <div class="col-lg-2 col-md-12 col-12 margin-mb-1 flex-mb">
+                                        <p><b>05:00 AM</b></p>
+                                        <p class="margin-ml-1"><span>00h09m*</span></p>
+                                    </div>
+                                    <div class="col-lg-2 col-md-5 col-5 margin-mb-1">
+                                        <p>Hồ Chí Minh mi mi mi</p>
+                                        <p><span>( Hồ Chí Minh )</span></p>
+                                    </div>
+                                    <div class="col-lg-1 col-md-2 col-2 margin-mb-1">
+                                        <span class="icon-next"><i class='bx bxs-chevron-right'></i> </span>
+                                    </div>
+                                    <div class="col-lg-2 col-md-5 col-5 margin-mb-1">
+                                        <p>Hồ Chí Minh</p>
+                                        <p><span>( Hồ Chí Minh )</span></p>
+                                    </div>
+                                    <div class="col-lg-1 col-md-12 col-12 margin-mb-1">
+                                        <p>31 chỗ</p>
+                                    </div>
+                                    <div class="col-lg-2 col-md-6 col-6">
+                                        <p><span><i class='bx bx-user'></i></span> <b>VND 550.000</b></p>
+                                    </div>
+                                    <div class="col-lg-2 col-md-6 col-6 text-center">
+                                        <button type="button" data-toggle="modal" data-target="#modal_booking_ticket"
+                                            class="btn btn-success">Chọn</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-bottom">
+                                <div class="row align-items-center">
+                                    <div class="col-lg-2 col-md-4 col-4">
+                                        <img src="./images/result-logo-na.png" class="img-fluid" alt="">
+                                    </div>
+                                    <div class="col-lg-3 col-md-4 col-8">
+                                        <span>Khải Nam • Giường nằm 40 chỗ</span>
+                                    </div>
+                                    <div class="col-lg-2 col-md-4 col-12">
+                                        <a href="#">Photo</a>
+                                        <span> | </span>
+                                        <button type="button" data-toggle="modal" data-target="#modal_ticket">Chi
+                                            tiết</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body mt-3">
+                            <div class="card-top">
+                                <div class="row">
+                                    <div class="col-lg-2 col-md-12 col-12 margin-mb-1 flex-mb">
+                                        <p><b>05:00 AM</b></p>
+                                        <p class="margin-ml-1"><span>00h09m*</span></p>
+                                    </div>
+                                    <div class="col-lg-2 col-md-5 col-5 margin-mb-1">
+                                        <p>Hồ Chí Minh</p>
+                                        <p><span>( Hồ Chí Minh )</span></p>
+                                    </div>
+                                    <div class="col-lg-1 col-md-2 col-2 margin-mb-1">
+                                        <span class="icon-next"><i class='bx bxs-chevron-right'></i> </span>
+                                    </div>
+                                    <div class="col-lg-2 col-md-5 col-5 margin-mb-1">
+                                        <p>Hồ Chí Minh</p>
+                                        <p><span>( Hồ Chí Minh )</span></p>
+                                    </div>
+                                    <div class="col-lg-1 col-md-12 col-12 margin-mb-1">
+                                        <p>31 chỗ</p>
+                                    </div>
+                                    <div class="col-lg-2 col-md-6 col-6">
+                                        <p><span><i class='bx bx-user'></i></span> <b>VND 550.000</b></p>
+                                    </div>
+                                    <div class="col-lg-2 col-md-6 col-6 text-center">
+                                        <button type="button" data-toggle="modal" data-target="#modal_booking_ticket"
+                                            class="btn btn-success">Chọn</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-bottom">
+                                <div class="row align-items-center">
+                                    <div class="col-lg-2 col-md-4 col-4">
+                                        <img src="./images/result-logo-na.png" class="img-fluid" alt="">
+                                    </div>
+                                    <div class="col-lg-3 col-md-4 col-8">
+                                        <span>Khải Nam • Giường nằm 40 chỗ</span>
+                                    </div>
+                                    <div class="col-lg-2 col-md-4 col-12">
+                                        <a href="#">Photo</a>
+                                        <span> | </span>
+                                        <button type="button" data-toggle="modal" data-target="#modal_ticket">Chi
+                                            tiết</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

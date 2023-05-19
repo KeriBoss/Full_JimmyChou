@@ -3,7 +3,7 @@ const roundway = document.querySelector('#roundway');
 const roundwayForm = document.querySelector('#round-way');
 
 roundway.onclick = ()=>{
-    var trip_type = document.querySelector('.trip_type');
+    var trip_type = document.getElementById('trip_type');
     if(roundway.checked == true){
         roundwayForm.classList.remove('notShow');
         trip_type.value = 0;
@@ -13,7 +13,7 @@ roundway.onclick = ()=>{
     }
 }
 oneway.onclick = ()=>{
-    var trip_type = document.querySelector('.trip_type');
+    var trip_type = document.getElementById('trip_type');
     if(oneway.checked == true){
         roundwayForm.classList.add('notShow');
         trip_type.value = 1;
@@ -23,16 +23,14 @@ oneway.onclick = ()=>{
     }
 }
 if(oneway && roundway){
-    var trip_type = document.querySelector('.trip_type');
+    var trip_type = document.getElementById('trip_type');
     if(oneway.checked === true){
         if(trip_type){
             trip_type.value = 1;
-            document.querySelector('.value_trip_type').value = 1;
         }
     }else if(roundway.checked === true){
         if(trip_type){
             trip_type.value = 0;
-            document.querySelector('.value_trip_type').value = 0;
         }
     }
 }
@@ -81,25 +79,22 @@ if(bookingDrop && boxLocation){
 //-------------------------------User-------------------------------------
 
 const btnChooseTransport = document.getElementById('pick_option_rental');
-if(btnChooseTransport){
-    var itemTran = btnChooseTransport.querySelectorAll('.nav-item .nav-link');
-    if(itemTran){
-        itemTran.forEach(item => {
-            item.addEventListener('click', function(){
-                var pane = document.querySelectorAll('.tab-content .tab-pane');
-                pane.forEach(data => {
-                    var transport_id = data.querySelector('.transport_id');
-                    if(transport_id){
-                        transport_id.value = item.querySelector('.value_transport').value;
-                    }
-                })
-                var temp = item.querySelector('.value_trip_type').value;
-                    setTripType(temp);
+var itemTran = btnChooseTransport.querySelectorAll('.nav-item .nav-link');
+if(itemTran){
+    itemTran.forEach(item => {
+        item.addEventListener('click', function(){
+            var pane = document.querySelectorAll('.tab-content .tab-pane');
+            pane.forEach(data => {
+                var transport_id = data.querySelector('.transport_id');
+                if(transport_id){
+                    transport_id.value = item.querySelector('.value_transport').value;
+                }
             })
+            var temp = item.querySelector('.value_trip_type').value;
+                setTripType(temp);
         })
-    }
+    })
 }
-
 
 function getTransportId(){
     if(btnChooseTransport){
@@ -113,8 +108,7 @@ function getTransportId(){
                         transport_id.value = item.querySelector('.value_transport').value;
                     }
                 })
-                var temp = item.querySelector('.value_trip_type').value;
-                setTripType(temp);
+                
             }
         })
     }

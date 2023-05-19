@@ -27,12 +27,10 @@ if(oneway && roundway){
     if(oneway.checked === true){
         if(trip_type){
             trip_type.value = 1;
-            document.querySelector('.value_trip_type').value = 1;
         }
     }else if(roundway.checked === true){
         if(trip_type){
             trip_type.value = 0;
-            document.querySelector('.value_trip_type').value = 0;
         }
     }
 }

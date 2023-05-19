@@ -84,7 +84,7 @@ $getAllLocation = $location->getAllLocationLimit($limit);
                                                                 <span>
                                                                     <i class='bx bxs-location-plus'></i>
                                                                 </span>
-                                                                <input class="form-control" list="GFGOptions" id="GFGDataList" name="first-location" placeholder="Select option" required>
+                                                                <input class="form-control" list="GFGOptions" id="GFGDataList" name="first-location" placeholder="Select option">
                                                             </div>
                                                             <datalist id="GFGOptions">
                                                                 <?php foreach($getAllLocation as $location){ ?>
@@ -100,7 +100,7 @@ $getAllLocation = $location->getAllLocationLimit($limit);
                                                                 <span>
                                                                     <i class='bx bxs-location-plus'></i>
                                                                 </span>
-                                                                <input class="form-control" list="option_drop" id="GFGDataList" name="last-location" placeholder="Select option" required>
+                                                                <input class="form-control" list="option_drop" id="GFGDataList" name="last-location" placeholder="Select option">
                                                             </div>
                                                             <datalist id="option_drop">
                                                                 <?php foreach($getAllLocation as $location){ ?>

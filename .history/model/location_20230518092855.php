@@ -9,14 +9,6 @@ class Location extends Database{
         return parent::select($sql);
     }
     /**
-     * Get all location
-     */
-    function getAllLocationLimit($limit){
-        $sql = parent::$connection->prepare("SELECT * from location LIMIT ?");
-        $sql->bind_param('i', $limit);
-        return parent::select($sql);
-    }
-    /**
      * insert new location
      */
     function insert($location_pick, $location_drop, $status){

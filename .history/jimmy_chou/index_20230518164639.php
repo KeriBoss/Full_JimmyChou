@@ -8,9 +8,8 @@ $getAllTransport = $transport->getAllTransport();
 $count = 1;
 $count_content = 1;
 
-$limit = 8;
 $location = new Location();
-$getAllLocation = $location->getAllLocationLimit($limit);
+$getAllLocation = $location->getAllLocation();
 ?>
 
 
@@ -44,7 +43,7 @@ $getAllLocation = $location->getAllLocationLimit($limit);
                                                 <div class="name"><?= $item['name'] ?></div>
                                                 <input type="number" class="value_transport" value="<?=$item['id']?>" hidden>
                                                 <?php if($item['trip_type'] == 1){ ?>
-                                                    <input type="number" class="value_trip_type" value="1" hidden>
+                                                    <input type="number" class="value_trip_type" value="<?=$item['trip_type']?>" hidden>
                                                 <?php  }else{ ?>
                                                     <input type="number" class="value_trip_type" value="0" hidden>
                                                 <?php  } ?>
@@ -71,7 +70,7 @@ $getAllLocation = $location->getAllLocationLimit($limit);
                                         <?php } ?>
 
                                         <form autocomplete="off" action="./booking.php" method="post" class="request-form ftco-animate">
-                                            <input type="number" name="trip_type" class="trip_type"  hidden><!--1 way or roundway-->
+                                            <input type="number" name="trip_type" class="trip_type" hidden><!--1 way or roundway-->
                                             <input type="number" name="transport_id" class="transport_id" hidden>
 
                                             <?php if($item['trip_type'] == 0){?>
@@ -84,7 +83,7 @@ $getAllLocation = $location->getAllLocationLimit($limit);
                                                                 <span>
                                                                     <i class='bx bxs-location-plus'></i>
                                                                 </span>
-                                                                <input class="form-control" list="GFGOptions" id="GFGDataList" name="first-location" placeholder="Select option" required>
+                                                                <input class="form-control" list="GFGOptions" id="GFGDataList" name="first-location" placeholder="Select option">
                                                             </div>
                                                             <datalist id="GFGOptions">
                                                                 <?php foreach($getAllLocation as $location){ ?>
@@ -100,7 +99,7 @@ $getAllLocation = $location->getAllLocationLimit($limit);
                                                                 <span>
                                                                     <i class='bx bxs-location-plus'></i>
                                                                 </span>
-                                                                <input class="form-control" list="option_drop" id="GFGDataList" name="last-location" placeholder="Select option" required>
+                                                                <input class="form-control" list="option_drop" id="GFGDataList" name="last-location" placeholder="Select option">
                                                             </div>
                                                             <datalist id="option_drop">
                                                                 <?php foreach($getAllLocation as $location){ ?>
