@@ -4,7 +4,7 @@ require_once "../model/transport.php";
 require_once "../model/location.php";
 
 $transport = new Transport();
-$getAllTransport = $transport->getAllTransport();
+$getAllTransport = $transport->getAllTransportHome();
 $count = 1;
 $count_content = 1;
 
@@ -112,7 +112,7 @@ $getAllLocation = $location->getAllLocationLimit($limit);
                                                     <div class="col-lg-2 col-md-4 col-12">
                                                         <div class="form-group">
                                                             <label for="" class="label">Ngày khởi hành</label>
-                                                            <input id="start_date" class="form-control" name="start_date" placeholder="dd/mm/yyyy">
+                                                            <input type="date" id="" class="form-control" name="start_date">
                                                         </div>
                                                     </div>
                                                     <div class="col-lg-2 col-md-4 col-12">
@@ -178,7 +178,7 @@ $getAllLocation = $location->getAllLocationLimit($limit);
                                                     <div class="col-lg-2 col-md-6 col-12">
                                                         <div class="form-group">
                                                             <label for="" class="label">Giờ về</label>
-                                                            <input class="form-control" type="text" name="time_start" placeholder="Thời gian" id="time_pick">
+                                                            <input class="form-control" type="text" name="time_end" placeholder="Thời gian" id="time_drop">
                                                         </div>
                                                     </div>
                                                 </div>

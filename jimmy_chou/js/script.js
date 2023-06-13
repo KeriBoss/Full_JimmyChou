@@ -2,35 +2,38 @@ const oneway = document.querySelector('#oneway');
 const roundway = document.querySelector('#roundway');
 const roundwayForm = document.querySelector('#round-way');
 
-roundway.onclick = ()=>{
-    var trip_type = document.querySelector('.trip_type');
-    if(roundway.checked == true){
-        roundwayForm.classList.remove('notShow');
-        trip_type.value = 0;
+if(oneway && roundway && roundwayForm){
+    roundway.onclick = ()=>{
+        var trip_type = document.querySelector('.trip_type');
+        if(roundway.checked == true){
+            roundwayForm.classList.remove('notShow');
+            trip_type.value = 0;
+        }
+        else if(roundway.checked == false){
+            roundwayForm.classList.add('notShow');
+        }
     }
-    else if(roundway.checked == false){
-        roundwayForm.classList.add('notShow');
+    oneway.onclick = ()=>{
+        var trip_type = document.querySelector('.trip_type');
+        if(oneway.checked == true){
+            roundwayForm.classList.add('notShow');
+            trip_type.value = 1;
+        }
+        else if(roundway.checked == false){
+            roundwayForm.classList.remove('notShow');
+        }
     }
 }
-oneway.onclick = ()=>{
-    var trip_type = document.querySelector('.trip_type');
-    if(oneway.checked == true){
-        roundwayForm.classList.add('notShow');
-        trip_type.value = 1;
-    }
-    else if(roundway.checked == false){
-        roundwayForm.classList.remove('notShow');
-    }
-}
+
 if(oneway && roundway){
     var trip_type = document.querySelector('.trip_type');
     if(oneway.checked === true){
-        if(trip_type){
+        if(trip_type && document.querySelector('.value_trip_type')){
             trip_type.value = 1;
             document.querySelector('.value_trip_type').value = 1;
         }
     }else if(roundway.checked === true){
-        if(trip_type){
+        if(trip_type && document.querySelector('.value_trip_type')){
             trip_type.value = 0;
             document.querySelector('.value_trip_type').value = 0;
         }
@@ -56,6 +59,7 @@ const seat_chart = document.querySelectorAll('.modal-body .map-car .map-content 
 
 seat_chart.forEach(item => {
     item.addEventListener('click', function(event){
+
         if(item.classList.contains('over')){
             return;
         }

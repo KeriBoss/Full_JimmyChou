@@ -9,6 +9,13 @@ class Transport extends Database{
         return parent::select($sql);
     }
     /**
+     * Funtion get All transport
+     */
+    function getAllTransportHome(){
+        $sql = parent::$connection->prepare("SELECT * from transport WHERE status = 1 order by id DESC");
+        return parent::select($sql);
+    }
+    /**
      * Insert new station in database
      */
     function insert($name, $icon_transport, $subtitle, $status, $trip_type){

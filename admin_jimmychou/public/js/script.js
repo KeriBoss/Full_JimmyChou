@@ -73,7 +73,6 @@ seat_chart.forEach((item) => {
         vehicle_seat.value = indexArr;
 
         document.getElementById('diagram_seat').value = JSON.stringify(ARR_SEAT);
-        console.log(ARR_SEAT);
     })
 })
 function removeItemOnce(arr, value) {

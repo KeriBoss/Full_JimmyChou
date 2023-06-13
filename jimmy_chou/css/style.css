@@ -10870,12 +10870,12 @@ textarea.form-control {
   background-color: var(--red);
   border: 1px solid transparent;
 }
-#modal_booking_ticket_2 .modal-body .map-car,
+/* #modal_booking_ticket_2 .modal-body .map-car,
 #modal_booking_ticket .modal-body .map-car{
   max-width: 150px;
   width: 150px;
   margin: 0 auto;
-}
+} */
 .modal-body .map-car .driver img{
   width: 25px;
   margin-bottom: 5px;
@@ -11239,4 +11239,65 @@ textarea.form-control {
 }
 .news-detail p b.line-hign{
   background-color: var(--main);
+}
+
+
+.modal-body .map-car {
+  max-width: 250px;
+  width: 250px;
+  margin: 0 auto;
+}
+
+.modal-body .map-car .driver img {
+  width: 25px;
+  margin-bottom: 5px;
+  vertical-align: middle;
+}
+
+.modal-body .map-car p {
+  margin: 0;
+  background-color: #555;
+  color: var(--white);
+  font-size: 12px;
+  text-align: center;
+}
+
+.modal-body .map-car .map-content {
+  padding: 5px 10px;
+}
+
+.modal-body .map-car .map-content .desk {
+  width: 40px;
+  height: 40px;
+  border: 1px solid #555;
+  border-radius: 4px;
+  display: grid;
+  place-items: center;
+  margin-bottom: 5px;
+  cursor: pointer;
+}
+
+.modal-body .map-car .map-content .desk.over {
+  background-color: var(--red);
+  color: var(--white);
+
+}
+
+.modal-body .map-car .map-content .desk.over:hover {
+  cursor: no-drop;
+}
+
+.modal-body .map-car .map-content .desk.active {
+  background-color: var(--green);
+  color: var(--white);
+}
+.seat_row{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  flex-wrap: wrap;
+}
+.seat_col{
+  width: 20%;
 }

@@ -97,6 +97,7 @@
 <script src="js/main.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/js/splide.min.js"></script>
 <script src="js/js.js"></script>
+<script src="js/booking.js"></script>
 <script src="js/script.js"></script>
 
 </body>
